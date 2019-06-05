@@ -1,5 +1,5 @@
 //
-//  UIView+SDExtension.h
+//  UIView+YWSDExtension.h
 //  SDRefreshView
 //
 //  Created by aier on 15-2-23.
@@ -33,7 +33,7 @@
 #define SDColorCreater(r, g, b, a) [UIColor colorWithRed:(r / 255.0) green:(g / 255.0) blue:(b / 255.0) alpha:a]
 
 
-@interface UIView (SDExtension)
+@interface UIView (YWSDExtension)
 
 @property (nonatomic, assign) CGFloat sd_height;
 @property (nonatomic, assign) CGFloat sd_width;

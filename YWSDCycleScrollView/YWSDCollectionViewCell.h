@@ -1,5 +1,5 @@
 //
-//  SDCollectionViewCell.h
+//  YWSDCollectionViewCell.h
 //  SDCycleScrollView
 //
 //  Created by aier on 15-3-22.
@@ -39,7 +39,7 @@
 #define Screen_Width [[UIScreen mainScreen] bounds].size.width
 #define Screen_Height [[UIScreen mainScreen] bounds].size.height
 
-@interface SDCollectionViewCell : UICollectionViewCell
+@interface YWSDCollectionViewCell : UICollectionViewCell
 
 @property (weak, nonatomic) UIImageView *imageView;
 @property (copy, nonatomic) NSString *title;

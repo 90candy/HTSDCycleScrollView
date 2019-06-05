@@ -13,13 +13,13 @@
 		AB26B3F5206A667700963970 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB26B3F4206A667700963970 /* Assets.xcassets */; };
 		AB26B3F8206A667700963970 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB26B3F6206A667700963970 /* LaunchScreen.storyboard */; };
 		AB26B3FB206A667700963970 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AB26B3FA206A667700963970 /* main.m */; };
-		AB26B411206A66EB00963970 /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB26B404206A66EB00963970 /* TAAbstractDotView.m */; };
-		AB26B412206A66EB00963970 /* TAAnimatedDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB26B406206A66EB00963970 /* TAAnimatedDotView.m */; };
-		AB26B413206A66EB00963970 /* TADotView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB26B408206A66EB00963970 /* TADotView.m */; };
-		AB26B414206A66EB00963970 /* TAPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = AB26B40A206A66EB00963970 /* TAPageControl.m */; };
-		AB26B415206A66EB00963970 /* SDCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB26B40C206A66EB00963970 /* SDCollectionViewCell.m */; };
-		AB26B416206A66EB00963970 /* SDCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB26B40E206A66EB00963970 /* SDCycleScrollView.m */; };
-		AB26B417206A66EB00963970 /* UIView+SDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = AB26B410206A66EB00963970 /* UIView+SDExtension.m */; };
+		AB26B411206A66EB00963970 /* YWTAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB26B404206A66EB00963970 /* YWTAAbstractDotView.m */; };
+		AB26B412206A66EB00963970 /* YWTAAnimatedDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB26B406206A66EB00963970 /* YWTAAnimatedDotView.m */; };
+		AB26B413206A66EB00963970 /* YWTADotView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB26B408206A66EB00963970 /* YWTADotView.m */; };
+		AB26B414206A66EB00963970 /* YWTAPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = AB26B40A206A66EB00963970 /* YWTAPageControl.m */; };
+		AB26B415206A66EB00963970 /* YWSDCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB26B40C206A66EB00963970 /* YWSDCollectionViewCell.m */; };
+		AB26B416206A66EB00963970 /* YWSDCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB26B40E206A66EB00963970 /* YWSDCycleScrollView.m */; };
+		AB26B417206A66EB00963970 /* UIView+YWSDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = AB26B410206A66EB00963970 /* UIView+YWSDExtension.m */; };
 		AB26B440206A684D00963970 /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = AB26B41A206A684C00963970 /* MKAnnotationView+WebCache.m */; };
 		AB26B441206A684D00963970 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = AB26B41C206A684C00963970 /* NSData+ImageContentType.m */; };
 		AB26B442206A684D00963970 /* NSImage+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = AB26B41E206A684C00963970 /* NSImage+WebCache.m */; };
@@ -52,20 +52,20 @@
 		AB26B3F7206A667700963970 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB26B3F9206A667700963970 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB26B3FA206A667700963970 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		AB26B403206A66EB00963970 /* TAAbstractDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAbstractDotView.h; sourceTree = "<group>"; };
-		AB26B404206A66EB00963970 /* TAAbstractDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAbstractDotView.m; sourceTree = "<group>"; };
-		AB26B405206A66EB00963970 /* TAAnimatedDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAnimatedDotView.h; sourceTree = "<group>"; };
-		AB26B406206A66EB00963970 /* TAAnimatedDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAnimatedDotView.m; sourceTree = "<group>"; };
-		AB26B407206A66EB00963970 /* TADotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TADotView.h; sourceTree = "<group>"; };
-		AB26B408206A66EB00963970 /* TADotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TADotView.m; sourceTree = "<group>"; };
-		AB26B409206A66EB00963970 /* TAPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAPageControl.h; sourceTree = "<group>"; };
-		AB26B40A206A66EB00963970 /* TAPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAPageControl.m; sourceTree = "<group>"; };
-		AB26B40B206A66EB00963970 /* SDCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDCollectionViewCell.h; sourceTree = "<group>"; };
-		AB26B40C206A66EB00963970 /* SDCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDCollectionViewCell.m; sourceTree = "<group>"; };
-		AB26B40D206A66EB00963970 /* SDCycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDCycleScrollView.h; sourceTree = "<group>"; };
-		AB26B40E206A66EB00963970 /* SDCycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDCycleScrollView.m; sourceTree = "<group>"; };
-		AB26B40F206A66EB00963970 /* UIView+SDExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SDExtension.h"; sourceTree = "<group>"; };
-		AB26B410206A66EB00963970 /* UIView+SDExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SDExtension.m"; sourceTree = "<group>"; };
+		AB26B403206A66EB00963970 /* YWTAAbstractDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWTAAbstractDotView.h; sourceTree = "<group>"; };
+		AB26B404206A66EB00963970 /* YWTAAbstractDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWTAAbstractDotView.m; sourceTree = "<group>"; };
+		AB26B405206A66EB00963970 /* YWTAAnimatedDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWTAAnimatedDotView.h; sourceTree = "<group>"; };
+		AB26B406206A66EB00963970 /* YWTAAnimatedDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWTAAnimatedDotView.m; sourceTree = "<group>"; };
+		AB26B407206A66EB00963970 /* YWTADotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWTADotView.h; sourceTree = "<group>"; };
+		AB26B408206A66EB00963970 /* YWTADotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWTADotView.m; sourceTree = "<group>"; };
+		AB26B409206A66EB00963970 /* YWTAPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWTAPageControl.h; sourceTree = "<group>"; };
+		AB26B40A206A66EB00963970 /* YWTAPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWTAPageControl.m; sourceTree = "<group>"; };
+		AB26B40B206A66EB00963970 /* YWSDCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWSDCollectionViewCell.h; sourceTree = "<group>"; };
+		AB26B40C206A66EB00963970 /* YWSDCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWSDCollectionViewCell.m; sourceTree = "<group>"; };
+		AB26B40D206A66EB00963970 /* YWSDCycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWSDCycleScrollView.h; sourceTree = "<group>"; };
+		AB26B40E206A66EB00963970 /* YWSDCycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWSDCycleScrollView.m; sourceTree = "<group>"; };
+		AB26B40F206A66EB00963970 /* UIView+YWSDExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+YWSDExtension.h"; sourceTree = "<group>"; };
+		AB26B410206A66EB00963970 /* UIView+YWSDExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+YWSDExtension.m"; sourceTree = "<group>"; };
 		AB26B419206A684C00963970 /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
 		AB26B41A206A684C00963970 /* MKAnnotationView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKAnnotationView+WebCache.m"; sourceTree = "<group>"; };
 		AB26B41B206A684C00963970 /* NSData+ImageContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+ImageContentType.h"; sourceTree = "<group>"; };
@@ -138,7 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				AB26B418206A684C00963970 /* SDWebImage */,
-				AB26B401206A66EB00963970 /* SDCycleScrollView */,
+				AB26B401206A66EB00963970 /* YWSDCycleScrollView */,
 				AB26B3EB206A667700963970 /* AppDelegate.h */,
 				AB26B3EC206A667700963970 /* AppDelegate.m */,
 				AB26B3EE206A667700963970 /* ViewController.h */,
@@ -152,34 +152,34 @@
 			path = HTSDCycleScrollViewDemo;
 			sourceTree = "<group>";
 		};
-		AB26B401206A66EB00963970 /* SDCycleScrollView */ = {
+		AB26B401206A66EB00963970 /* YWSDCycleScrollView */ = {
 			isa = PBXGroup;
 			children = (
-				AB26B402206A66EB00963970 /* PageControl */,
-				AB26B40B206A66EB00963970 /* SDCollectionViewCell.h */,
-				AB26B40C206A66EB00963970 /* SDCollectionViewCell.m */,
-				AB26B40D206A66EB00963970 /* SDCycleScrollView.h */,
-				AB26B40E206A66EB00963970 /* SDCycleScrollView.m */,
-				AB26B40F206A66EB00963970 /* UIView+SDExtension.h */,
-				AB26B410206A66EB00963970 /* UIView+SDExtension.m */,
+				AB26B402206A66EB00963970 /* YWPageControl */,
+				AB26B40B206A66EB00963970 /* YWSDCollectionViewCell.h */,
+				AB26B40C206A66EB00963970 /* YWSDCollectionViewCell.m */,
+				AB26B40D206A66EB00963970 /* YWSDCycleScrollView.h */,
+				AB26B40E206A66EB00963970 /* YWSDCycleScrollView.m */,
+				AB26B40F206A66EB00963970 /* UIView+YWSDExtension.h */,
+				AB26B410206A66EB00963970 /* UIView+YWSDExtension.m */,
 			);
-			name = SDCycleScrollView;
-			path = ../../SDCycleScrollView;
+			name = YWSDCycleScrollView;
+			path = ../../YWSDCycleScrollView;
 			sourceTree = "<group>";
 		};
-		AB26B402206A66EB00963970 /* PageControl */ = {
+		AB26B402206A66EB00963970 /* YWPageControl */ = {
 			isa = PBXGroup;
 			children = (
-				AB26B403206A66EB00963970 /* TAAbstractDotView.h */,
-				AB26B404206A66EB00963970 /* TAAbstractDotView.m */,
-				AB26B405206A66EB00963970 /* TAAnimatedDotView.h */,
-				AB26B406206A66EB00963970 /* TAAnimatedDotView.m */,
-				AB26B407206A66EB00963970 /* TADotView.h */,
-				AB26B408206A66EB00963970 /* TADotView.m */,
-				AB26B409206A66EB00963970 /* TAPageControl.h */,
-				AB26B40A206A66EB00963970 /* TAPageControl.m */,
+				AB26B403206A66EB00963970 /* YWTAAbstractDotView.h */,
+				AB26B404206A66EB00963970 /* YWTAAbstractDotView.m */,
+				AB26B405206A66EB00963970 /* YWTAAnimatedDotView.h */,
+				AB26B406206A66EB00963970 /* YWTAAnimatedDotView.m */,
+				AB26B407206A66EB00963970 /* YWTADotView.h */,
+				AB26B408206A66EB00963970 /* YWTADotView.m */,
+				AB26B409206A66EB00963970 /* YWTAPageControl.h */,
+				AB26B40A206A66EB00963970 /* YWTAPageControl.m */,
 			);
-			path = PageControl;
+			path = YWPageControl;
 			sourceTree = "<group>";
 		};
 		AB26B418206A684C00963970 /* SDWebImage */ = {
@@ -300,24 +300,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB26B414206A66EB00963970 /* TAPageControl.m in Sources */,
+				AB26B414206A66EB00963970 /* YWTAPageControl.m in Sources */,
 				AB26B440206A684D00963970 /* MKAnnotationView+WebCache.m in Sources */,
 				AB26B451206A684D00963970 /* UIView+WebCache.m in Sources */,
 				AB26B44E206A684D00963970 /* UIImage+WebP.m in Sources */,
 				AB26B3F0206A667700963970 /* ViewController.m in Sources */,
 				AB26B44B206A684D00963970 /* UIButton+WebCache.m in Sources */,
 				AB26B448206A684D00963970 /* SDWebImageDownloaderOperation.m in Sources */,
-				AB26B413206A66EB00963970 /* TADotView.m in Sources */,
-				AB26B417206A66EB00963970 /* UIView+SDExtension.m in Sources */,
+				AB26B413206A66EB00963970 /* YWTADotView.m in Sources */,
+				AB26B417206A66EB00963970 /* UIView+YWSDExtension.m in Sources */,
 				AB26B442206A684D00963970 /* NSImage+WebCache.m in Sources */,
-				AB26B411206A66EB00963970 /* TAAbstractDotView.m in Sources */,
+				AB26B411206A66EB00963970 /* YWTAAbstractDotView.m in Sources */,
 				AB26B446206A684D00963970 /* SDWebImageDecoder.m in Sources */,
-				AB26B416206A66EB00963970 /* SDCycleScrollView.m in Sources */,
+				AB26B416206A66EB00963970 /* YWSDCycleScrollView.m in Sources */,
 				AB26B44F206A684D00963970 /* UIImageView+HighlightedWebCache.m in Sources */,
 				AB26B3FB206A667700963970 /* main.m in Sources */,
 				AB26B447206A684D00963970 /* SDWebImageDownloader.m in Sources */,
 				AB26B445206A684D00963970 /* SDWebImageCompat.m in Sources */,
-				AB26B412206A66EB00963970 /* TAAnimatedDotView.m in Sources */,
+				AB26B412206A66EB00963970 /* YWTAAnimatedDotView.m in Sources */,
 				AB26B44C206A684D00963970 /* UIImage+GIF.m in Sources */,
 				AB26B44D206A684D00963970 /* UIImage+MultiFormat.m in Sources */,
 				AB26B444206A684D00963970 /* SDImageCacheConfig.m in Sources */,
@@ -326,7 +326,7 @@
 				AB26B441206A684D00963970 /* NSData+ImageContentType.m in Sources */,
 				AB26B450206A684D00963970 /* UIImageView+WebCache.m in Sources */,
 				AB26B449206A684D00963970 /* SDWebImageManager.m in Sources */,
-				AB26B415206A66EB00963970 /* SDCollectionViewCell.m in Sources */,
+				AB26B415206A66EB00963970 /* YWSDCollectionViewCell.m in Sources */,
 				AB26B452206A684D00963970 /* UIView+WebCacheOperation.m in Sources */,
 				AB26B443206A684D00963970 /* SDImageCache.m in Sources */,
 			);
@@ -463,7 +463,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WG7AE8X7MV;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = HTSDCycleScrollViewDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -478,7 +478,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WG7AE8X7MV;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = HTSDCycleScrollViewDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

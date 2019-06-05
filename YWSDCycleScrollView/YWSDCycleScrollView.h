@@ -1,6 +1,6 @@
 //
-//  SDCycleScrollView.h
-//  SDCycleScrollView
+//  YWSDCycleScrollView.h
+//  YWSDCycleScrollView
 //
 //  Created by aier on 15-3-22.
 //  Copyright (c) 2015年 GSD. All rights reserved.
@@ -34,7 +34,7 @@
  */
 
 #import <UIKit/UIKit.h>
-#import "SDCollectionViewCell.h"
+#import "YWSDCollectionViewCell.h"
 
 typedef enum {
     SDCycleScrollViewPageContolAlimentRight,
@@ -47,21 +47,21 @@ typedef enum {
     SDCycleScrollViewPageContolStyleNone            // 不显示pagecontrol
 } SDCycleScrollViewPageContolStyle;
 
-@class SDCycleScrollView;
+@class YWSDCycleScrollView;
 
 @protocol SDCycleScrollViewDelegate <NSObject>
 
 @optional
 
 /** 点击图片回调 */
-- (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index;
+- (void)cycleScrollView:(YWSDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index;
 
 /** 图片滚动回调 */
-- (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didScrollToIndex:(NSInteger)index;
+- (void)cycleScrollView:(YWSDCycleScrollView *)cycleScrollView didScrollToIndex:(NSInteger)index;
 
 @end
 
-@interface SDCycleScrollView : UIView
+@interface YWSDCycleScrollView : UIView
 
 
 /** 初始轮播图（推荐使用） */

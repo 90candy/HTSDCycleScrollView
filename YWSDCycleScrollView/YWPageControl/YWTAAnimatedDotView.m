@@ -1,16 +1,16 @@
 //
-//  TAAnimatedDotView.m
-//  TAPageControl
+//  YWTAAnimatedDotView.m
+//  YWTAPageControl
 //
 //  Created by Tanguy Aladenise on 2015-01-22.
 //  Copyright (c) 2015 Tanguy Aladenise. All rights reserved.
 //
 
-#import "TAAnimatedDotView.h"
+#import "YWTAAnimatedDotView.h"
 
 static CGFloat const kAnimateDuration = 1;
 
-@implementation TAAnimatedDotView
+@implementation YWTAAnimatedDotView
 
 - (instancetype)init
 {

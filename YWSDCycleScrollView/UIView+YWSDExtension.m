@@ -1,5 +1,5 @@
 //
-//  UIView+SDExtension.m
+//  UIView+YWSDExtension.m
 //  SDRefreshView
 //
 //  Created by aier on 15-2-23.
@@ -49,9 +49,9 @@
  */
 
 
-#import "UIView+SDExtension.h"
+#import "UIView+YWSDExtension.h"
 
-@implementation UIView (SDExtension)
+@implementation UIView (YWSDExtension)
 
 - (CGFloat)sd_height
 {

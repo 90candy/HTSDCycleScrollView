@@ -1,15 +1,15 @@
 //
-//  TAPageControl.m
-//  TAPageControl
+//  YWTAPageControl.m
+//  YWTAPageControl
 //
 //  Created by Tanguy Aladenise on 2015-01-21.
 //  Copyright (c) 2015 Tanguy Aladenise. All rights reserved.
 //
 
-#import "TAPageControl.h"
-#import "TAAbstractDotView.h"
-#import "TAAnimatedDotView.h"
-#import "TADotView.h"
+#import "YWTAPageControl.h"
+#import "YWTAAbstractDotView.h"
+#import "YWTAAnimatedDotView.h"
+#import "YWTADotView.h"
 
 /**
  *  Default number of pages for initialization
@@ -42,7 +42,7 @@ static NSInteger const kDefaultSpacingBetweenDots = 8;
 static CGSize const kDefaultDotSize = {8, 8};
 
 
-@interface TAPageControl()
+@interface YWTAPageControl()
 
 
 /**
@@ -53,7 +53,7 @@ static CGSize const kDefaultDotSize = {8, 8};
 
 @end
 
-@implementation TAPageControl
+@implementation YWTAPageControl
 
 
 #pragma mark - Lifecycle
@@ -96,7 +96,7 @@ static CGSize const kDefaultDotSize = {8, 8};
  */
 - (void)initialization
 {
-    self.dotViewClass           = [TAAnimatedDotView class];
+    self.dotViewClass           = [YWTAAnimatedDotView class];
     self.spacingBetweenDots     = kDefaultSpacingBetweenDots;
     self.numberOfPages          = kDefaultNumberOfPages;
     self.currentPage            = kDefaultCurrentPage;
@@ -215,9 +215,9 @@ static CGSize const kDefaultDotSize = {8, 8};
     
     if (self.dotViewClass) {
         dotView = [[self.dotViewClass alloc] initWithFrame:CGRectMake(0, 0, self.dotSize.width, self.dotSize.height)];
-        if ([dotView isKindOfClass:[TAAnimatedDotView class]] && self.dotColor) {
-            ((TAAnimatedDotView *)dotView).dotColor = self.dotColor;
-            ((TAAnimatedDotView *)dotView).normalColor = self.normalColor;
+        if ([dotView isKindOfClass:[YWTAAnimatedDotView class]] && self.dotColor) {
+            ((YWTAAnimatedDotView *)dotView).dotColor = self.dotColor;
+            ((YWTAAnimatedDotView *)dotView).normalColor = self.normalColor;
         }
     } else {
         dotView = [[UIImageView alloc] initWithImage:self.dotImage];
@@ -243,11 +243,11 @@ static CGSize const kDefaultDotSize = {8, 8};
 - (void)changeActivity:(BOOL)active atIndex:(NSInteger)index
 {
     if (self.dotViewClass) {
-        TAAbstractDotView *abstractDotView = (TAAbstractDotView *)[self.dots objectAtIndex:index];
+        YWTAAbstractDotView *abstractDotView = (YWTAAbstractDotView *)[self.dots objectAtIndex:index];
         if ([abstractDotView respondsToSelector:@selector(changeActivityState:)]) {
             [abstractDotView changeActivityState:active];
         } else {
-            NSLog(@"Custom view : %@ must implement an 'changeActivityState' method or you can subclass %@ to help you.", self.dotViewClass, [TAAbstractDotView class]);
+            NSLog(@"Custom view : %@ must implement an 'changeActivityState' method or you can subclass %@ to help you.", self.dotViewClass, [YWTAAbstractDotView class]);
         }
     } else if (self.dotImage && self.currentDotImage) {
         UIImageView *dotView = (UIImageView *)[self.dots objectAtIndex:index];

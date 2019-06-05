@@ -1,6 +1,6 @@
 //
-//  TAAbstractDotView.h
-//  TAPageControl
+//  YWTAAbstractDotView.h
+//  YWTAPageControl
 //
 //  Created by Tanguy Aladenise on 2015-01-22.
 //  Copyright (c) 2015 Tanguy Aladenise. All rights reserved.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface TAAbstractDotView : UIView
+@interface YWTAAbstractDotView : UIView
 
 
 /**

@@ -1,6 +1,6 @@
 //
-//  SDCycleScrollView.m
-//  SDCycleScrollView
+//  YWSDCycleScrollView.m
+//  YWSDCycleScrollView
 //
 //  Created by aier on 15-3-22.
 //  Copyright (c) 2015年 GSD. All rights reserved.
@@ -29,9 +29,9 @@
  */
 
 
-#import "SDCycleScrollView.h"
-#import "UIView+SDExtension.h"
-#import "TAPageControl.h"
+#import "YWSDCycleScrollView.h"
+#import "UIView+YWSDExtension.h"
+#import "YWTAPageControl.h"
 #import "UIImageView+WebCache.h"
 #import "SDImageCache.h"
 
@@ -39,7 +39,7 @@
 
 NSString * const ID = @"cycleCell";
 
-@interface SDCycleScrollView () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
+@interface YWSDCycleScrollView () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic, weak) UICollectionViewFlowLayout *flowLayout;
 @property (nonatomic, strong) NSArray *imagePathsGroup;
@@ -53,7 +53,7 @@ NSString * const ID = @"cycleCell";
 
 @end
 
-@implementation SDCycleScrollView
+@implementation YWSDCycleScrollView
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
@@ -98,14 +98,14 @@ NSString * const ID = @"cycleCell";
 
 + (instancetype)cycleScrollViewWithFrame:(CGRect)frame imageNamesGroup:(NSArray *)imageNamesGroup
 {
-    SDCycleScrollView *cycleScrollView = [[self alloc] initWithFrame:frame];
+    YWSDCycleScrollView *cycleScrollView = [[self alloc] initWithFrame:frame];
     cycleScrollView.localizationImageNamesGroup = [NSMutableArray arrayWithArray:imageNamesGroup];
     return cycleScrollView;
 }
 
 + (instancetype)cycleScrollViewWithFrame:(CGRect)frame shouldInfiniteLoop:(BOOL)infiniteLoop imageNamesGroup:(NSArray *)imageNamesGroup
 {
-    SDCycleScrollView *cycleScrollView = [[self alloc] initWithFrame:frame];
+    YWSDCycleScrollView *cycleScrollView = [[self alloc] initWithFrame:frame];
     cycleScrollView.infiniteLoop = infiniteLoop;
     cycleScrollView.localizationImageNamesGroup = [NSMutableArray arrayWithArray:imageNamesGroup];
     return cycleScrollView;
@@ -113,14 +113,14 @@ NSString * const ID = @"cycleCell";
 
 + (instancetype)cycleScrollViewWithFrame:(CGRect)frame imageURLStringsGroup:(NSArray *)imageURLsGroup
 {
-    SDCycleScrollView *cycleScrollView = [[self alloc] initWithFrame:frame];
+    YWSDCycleScrollView *cycleScrollView = [[self alloc] initWithFrame:frame];
     cycleScrollView.imageURLStringsGroup = [NSMutableArray arrayWithArray:imageURLsGroup];
     return cycleScrollView;
 }
 
 + (instancetype)cycleScrollViewWithFrame:(CGRect)frame delegate:(id<SDCycleScrollViewDelegate>)delegate placeholderImage:(UIImage *)placeholderImage
 {
-    SDCycleScrollView *cycleScrollView = [[self alloc] initWithFrame:frame];
+    YWSDCycleScrollView *cycleScrollView = [[self alloc] initWithFrame:frame];
     cycleScrollView.delegate = delegate;
     cycleScrollView.placeholderImage = placeholderImage;
     
@@ -140,7 +140,7 @@ NSString * const ID = @"cycleCell";
     mainView.pagingEnabled = YES;
     mainView.showsHorizontalScrollIndicator = NO;
     mainView.showsVerticalScrollIndicator = NO;
-    [mainView registerClass:[SDCollectionViewCell class] forCellWithReuseIdentifier:ID];
+    [mainView registerClass:[YWSDCollectionViewCell class] forCellWithReuseIdentifier:ID];
     mainView.dataSource = self;
     mainView.delegate = self;
     mainView.scrollsToTop = NO;
@@ -169,8 +169,8 @@ NSString * const ID = @"cycleCell";
 {
     _pageControlDotSize = pageControlDotSize;
     [self setupPageControl];
-    if ([self.pageControl isKindOfClass:[TAPageControl class]]) {
-        TAPageControl *pageContol = (TAPageControl *)_pageControl;
+    if ([self.pageControl isKindOfClass:[YWTAPageControl class]]) {
+        YWTAPageControl *pageContol = (YWTAPageControl *)_pageControl;
         pageContol.dotSize = pageControlDotSize;
     }
 }
@@ -185,8 +185,8 @@ NSString * const ID = @"cycleCell";
 - (void)setCurrentPageDotColor:(UIColor *)currentPageDotColor
 {
     _currentPageDotColor = currentPageDotColor;
-    if ([self.pageControl isKindOfClass:[TAPageControl class]]) {
-        TAPageControl *pageControl = (TAPageControl *)_pageControl;
+    if ([self.pageControl isKindOfClass:[YWTAPageControl class]]) {
+        YWTAPageControl *pageControl = (YWTAPageControl *)_pageControl;
         pageControl.dotColor = currentPageDotColor;
     } else {
         UIPageControl *pageControl = (UIPageControl *)_pageControl;
@@ -231,8 +231,8 @@ NSString * const ID = @"cycleCell";
 {
     if (!image || !self.pageControl) return;
     
-    if ([self.pageControl isKindOfClass:[TAPageControl class]]) {
-        TAPageControl *pageControl = (TAPageControl *)_pageControl;
+    if ([self.pageControl isKindOfClass:[YWTAPageControl class]]) {
+        YWTAPageControl *pageControl = (YWTAPageControl *)_pageControl;
         if (isCurrentPageDot) {
             pageControl.currentDotImage = image;
         } else {
@@ -367,7 +367,7 @@ NSString * const ID = @"cycleCell";
     switch (self.pageControlStyle) {
         case SDCycleScrollViewPageContolStyleAnimated:
         {
-            TAPageControl *pageControl = [[TAPageControl alloc] init];
+            YWTAPageControl *pageControl = [[YWTAPageControl alloc] init];
             pageControl.numberOfPages = self.imagePathsGroup.count;
             pageControl.dotColor = self.currentPageDotColor;
             pageControl.normalColor = self.pageDotColor;
@@ -498,8 +498,8 @@ NSString * const ID = @"cycleCell";
     self.contentOffsetX = self.mainView.contentOffset.x;
     
     CGSize size = CGSizeZero;
-    if ([self.pageControl isKindOfClass:[TAPageControl class]]) {
-        TAPageControl *pageControl = (TAPageControl *)_pageControl;
+    if ([self.pageControl isKindOfClass:[YWTAPageControl class]]) {
+        YWTAPageControl *pageControl = (YWTAPageControl *)_pageControl;
         if (!(self.pageDotImage && self.currentPageDotImage && CGSizeEqualToSize(kCycleScrollViewInitialPageControlDotSize, self.pageControlDotSize))) {
             pageControl.dotSize = self.pageControlDotSize;
         }
@@ -513,8 +513,8 @@ NSString * const ID = @"cycleCell";
     }
     CGFloat y = self.mainView.sd_height - size.height - 10;
     
-    if ([self.pageControl isKindOfClass:[TAPageControl class]]) {
-        TAPageControl *pageControl = (TAPageControl *)_pageControl;
+    if ([self.pageControl isKindOfClass:[YWTAPageControl class]]) {
+        YWTAPageControl *pageControl = (YWTAPageControl *)_pageControl;
         [pageControl sizeToFit];
     }
     
@@ -571,7 +571,7 @@ NSString * const ID = @"cycleCell";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    SDCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:ID forIndexPath:indexPath];
+    YWSDCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:ID forIndexPath:indexPath];
     
     long itemIndex = [self pageControlIndexWithCurrentCellIndex:indexPath.item];
     
@@ -639,8 +639,8 @@ NSString * const ID = @"cycleCell";
     int itemIndex = [self currentIndex];
     int indexOnPageControl = [self pageControlIndexWithCurrentCellIndex:itemIndex];
     
-    if ([self.pageControl isKindOfClass:[TAPageControl class]]) {
-        TAPageControl *pageControl = (TAPageControl *)_pageControl;
+    if ([self.pageControl isKindOfClass:[YWTAPageControl class]]) {
+        YWTAPageControl *pageControl = (YWTAPageControl *)_pageControl;
         pageControl.currentPage = indexOnPageControl;
     } else {
         UIPageControl *pageControl = (UIPageControl *)_pageControl;
@@ -649,9 +649,9 @@ NSString * const ID = @"cycleCell";
     
     // 图片缩放
     if (self.zoomType) {
-        SDCollectionViewCell *lastCell = (SDCollectionViewCell *)[self.mainView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:itemIndex - 1 inSection:0]];
-        SDCollectionViewCell *currentCell = (SDCollectionViewCell *)[self.mainView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:itemIndex inSection:0]];
-        SDCollectionViewCell *nextCell = (SDCollectionViewCell *)[self.mainView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:itemIndex + 1 inSection:0]];
+        YWSDCollectionViewCell *lastCell = (YWSDCollectionViewCell *)[self.mainView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:itemIndex - 1 inSection:0]];
+        YWSDCollectionViewCell *currentCell = (YWSDCollectionViewCell *)[self.mainView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:itemIndex inSection:0]];
+        YWSDCollectionViewCell *nextCell = (YWSDCollectionViewCell *)[self.mainView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:itemIndex + 1 inSection:0]];
         
         // 当前cell的偏移比例
         CGFloat scale = (fabs(self.flowLayout.itemSize.width * itemIndex - (self.mainView.contentOffset.x + (Screen_Width - self.flowLayout.itemSize.width)/2)))/self.flowLayout.itemSize.width;

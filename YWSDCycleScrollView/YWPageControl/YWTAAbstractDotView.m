@@ -1,15 +1,15 @@
 //
-//  TAAbstractDotView.m
-//  TAPageControl
+//  YWTAAbstractDotView.m
+//  YWTAPageControl
 //
 //  Created by Tanguy Aladenise on 2015-01-22.
 //  Copyright (c) 2015 Tanguy Aladenise. All rights reserved.
 //
 
-#import "TAAbstractDotView.h"
+#import "YWTAAbstractDotView.h"
 
 
-@implementation TAAbstractDotView
+@implementation YWTAAbstractDotView
 
 
 - (id)init

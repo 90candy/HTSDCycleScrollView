@@ -7,12 +7,12 @@
 //
 
 #import "ViewController.h"
-#import "SDCycleScrollView.h"
+#import "YWSDCycleScrollView.h"
 
 @interface ViewController () <SDCycleScrollViewDelegate>
 
-@property (strong, nonatomic) SDCycleScrollView *adCycleScrollView;
-@property (strong, nonatomic) SDCycleScrollView *noticeCycleScrollView;
+@property (strong, nonatomic) YWSDCycleScrollView *adCycleScrollView;
+@property (strong, nonatomic) YWSDCycleScrollView *noticeCycleScrollView;
 
 @end
 
@@ -22,7 +22,7 @@
     [super viewDidLoad];
     
     // 轮播图
-    SDCycleScrollView *adCycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 100, Screen_Width, 200) delegate:self placeholderImage:[UIImage new]];
+    YWSDCycleScrollView *adCycleScrollView = [YWSDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 100, Screen_Width, 200) delegate:self placeholderImage:[UIImage new]];
     adCycleScrollView.zoomType = YES;  // 是否使用缩放效果
     adCycleScrollView.pageControlStyle = SDCycleScrollViewPageContolStyleAnimated;
     adCycleScrollView.scrollDirection = UICollectionViewScrollDirectionHorizontal;
@@ -35,7 +35,7 @@
     self.adCycleScrollView = adCycleScrollView;
     
     // 轮播公告
-    SDCycleScrollView *noticeView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 350, Screen_Width, 30) delegate:self placeholderImage:nil];
+    YWSDCycleScrollView *noticeView = [YWSDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 350, Screen_Width, 30) delegate:self placeholderImage:nil];
     noticeView.backgroundColor = [UIColor lightGrayColor];
     noticeView.onlyDisplayText = YES;
     noticeView.titlesGroup = @[@"公告1", @"公告2", @"公告3"];
@@ -47,7 +47,7 @@
 #pragma mark - SDCycleScrollViewDelegate
 
 // 点击轮播内容
-- (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index {
+- (void)cycleScrollView:(YWSDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index {
     if (cycleScrollView == self.adCycleScrollView) {
         [cycleScrollView adjustWhenControllerViewWillAppera];
         NSLog(@"点击轮播图");

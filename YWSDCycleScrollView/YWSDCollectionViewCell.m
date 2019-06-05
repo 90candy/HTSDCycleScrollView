@@ -1,6 +1,6 @@
 //
-//  SDCollectionViewCell.m
-//  SDCycleScrollView
+//  YWSDCollectionViewCell.m
+//  YWSDCycleScrollView
 //
 //  Created by aier on 15-3-22.
 //  Copyright (c) 2015年 GSD. All rights reserved.
@@ -30,11 +30,11 @@
  */
 
 
-#import "SDCollectionViewCell.h"
-#import "UIView+SDExtension.h"
+#import "YWSDCollectionViewCell.h"
+#import "UIView+YWSDExtension.h"
 
 
-@implementation SDCollectionViewCell
+@implementation YWSDCollectionViewCell
 {
     __weak UILabel *_titleLabel;
 }

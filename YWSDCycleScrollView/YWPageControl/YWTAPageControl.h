@@ -1,6 +1,6 @@
 //
-//  TAPageControl.h
-//  TAPageControl
+//  YWTAPageControl.h
+//  YWTAPageControl
 //
 //  Created by Tanguy Aladenise on 2015-01-21.
 //  Copyright (c) 2015 Tanguy Aladenise. All rights reserved.
@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol TAPageControlDelegate;
+@protocol YWTAPageControlDelegate;
 
 
-@interface TAPageControl : UIControl
+@interface YWTAPageControl : UIControl
 
 
 /**
@@ -19,7 +19,7 @@
  */
 
 /**
- *  The Class of your custom UIView, make sure to respect the TAAbstractDotView class.
+ *  The Class of your custom UIView, make sure to respect the YWTAAbstractDotView class.
  */
 @property (nonatomic) Class dotViewClass;
 
@@ -58,9 +58,9 @@
 
 
 /**
- * Delegate for TAPageControl
+ * Delegate for YWTAPageControl
  */
-@property(nonatomic,assign) id<TAPageControlDelegate> delegate;
+@property(nonatomic,assign) id<YWTAPageControlDelegate> delegate;
 
 
 /**
@@ -100,9 +100,9 @@
 @end
 
 
-@protocol TAPageControlDelegate <NSObject>
+@protocol YWTAPageControlDelegate <NSObject>
 
 @optional
-- (void)TAPageControl:(TAPageControl *)pageControl didSelectPageAtIndex:(NSInteger)index;
+- (void)TAPageControl:(YWTAPageControl *)pageControl didSelectPageAtIndex:(NSInteger)index;
 
 @end
