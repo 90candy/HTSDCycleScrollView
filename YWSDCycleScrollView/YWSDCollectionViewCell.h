@@ -32,12 +32,10 @@
 
 #import <UIKit/UIKit.h>
 
-#define MaxWidth 300
-#define MinWidth 250
-#define MaxHeight 200
-#define MinHeight 170
-#define Screen_Width [[UIScreen mainScreen] bounds].size.width
-#define Screen_Height [[UIScreen mainScreen] bounds].size.height
+#define YWScreen_Width [[UIScreen mainScreen] bounds].size.width
+#define YWMaxWidth YWScreen_Width * 0.8
+#define YWMinWidth YWScreen_Width * 0.7
+
 
 @interface YWSDCollectionViewCell : UICollectionViewCell
 

@@ -104,6 +104,7 @@
     } else {
         if (!self.zoomType) {
             _imageView.frame = self.bounds;
+            _imageView.layer.cornerRadius = 0;
         }
 
         CGFloat titleLabelW = self.sd_width;

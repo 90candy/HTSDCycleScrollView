@@ -43,13 +43,13 @@ typedef enum {
 
 typedef enum {
     SDCycleScrollViewPageContolStyleClassic,        // 系统自带经典样式
-    SDCycleScrollViewPageContolStyleAnimated,       // 动画效果pagecontrol
+    YWSDCycleScrollViewPageContolStyleAnimated,       // 动画效果pagecontrol
     SDCycleScrollViewPageContolStyleNone            // 不显示pagecontrol
 } SDCycleScrollViewPageContolStyle;
 
 @class YWSDCycleScrollView;
 
-@protocol SDCycleScrollViewDelegate <NSObject>
+@protocol YWSDCycleScrollViewDelegate <NSObject>
 
 @optional
 
@@ -65,7 +65,7 @@ typedef enum {
 
 
 /** 初始轮播图（推荐使用） */
-+ (instancetype)cycleScrollViewWithFrame:(CGRect)frame delegate:(id<SDCycleScrollViewDelegate>)delegate placeholderImage:(UIImage *)placeholderImage;
++ (instancetype)cycleScrollViewWithFrame:(CGRect)frame delegate:(id<YWSDCycleScrollViewDelegate>)delegate placeholderImage:(UIImage *)placeholderImage;
 
 + (instancetype)cycleScrollViewWithFrame:(CGRect)frame imageURLStringsGroup:(NSArray *)imageURLStringsGroup;
 
@@ -106,7 +106,7 @@ typedef enum {
 /** 图片滚动方向，默认为水平滚动 */
 @property (nonatomic, assign) UICollectionViewScrollDirection scrollDirection;
 
-@property (nonatomic, weak) id<SDCycleScrollViewDelegate> delegate;
+@property (nonatomic, weak) id<YWSDCycleScrollViewDelegate> delegate;
 
 /** block方式监听点击 */
 @property (nonatomic, copy) void (^clickItemOperationBlock)(NSInteger currentIndex);
@@ -185,5 +185,10 @@ typedef enum {
 
 /** 清除图片缓存（兼容旧版本方法） */
 - (void)clearCache;
+
+// Update By Candy - 卡片式缩放的最大高度 和最小高度
+@property (nonatomic, assign) CGFloat     maxHeight;
+@property (nonatomic, assign) CGFloat     minHeight;
+
 
 @end

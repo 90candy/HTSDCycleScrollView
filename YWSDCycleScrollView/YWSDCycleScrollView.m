@@ -58,6 +58,8 @@ NSString * const ID = @"cycleCell";
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
+        _maxHeight = frame.size.height;
+        _minHeight = _maxHeight * 0.9;
         [self initialization];
         [self setupMainView];
     }
@@ -118,7 +120,7 @@ NSString * const ID = @"cycleCell";
     return cycleScrollView;
 }
 
-+ (instancetype)cycleScrollViewWithFrame:(CGRect)frame delegate:(id<SDCycleScrollViewDelegate>)delegate placeholderImage:(UIImage *)placeholderImage
++ (instancetype)cycleScrollViewWithFrame:(CGRect)frame delegate:(id<YWSDCycleScrollViewDelegate>)delegate placeholderImage:(UIImage *)placeholderImage
 {
     YWSDCycleScrollView *cycleScrollView = [[self alloc] initWithFrame:frame];
     cycleScrollView.delegate = delegate;
@@ -209,8 +211,8 @@ NSString * const ID = @"cycleCell";
 {
     _currentPageDotImage = currentPageDotImage;
     
-    if (self.pageControlStyle != SDCycleScrollViewPageContolStyleAnimated) {
-        self.pageControlStyle = SDCycleScrollViewPageContolStyleAnimated;
+    if (self.pageControlStyle != YWSDCycleScrollViewPageContolStyleAnimated) {
+        self.pageControlStyle = YWSDCycleScrollViewPageContolStyleAnimated;
     }
     
     [self setCustomPageControlDotImage:currentPageDotImage isCurrentPageDot:YES];
@@ -220,8 +222,8 @@ NSString * const ID = @"cycleCell";
 {
     _pageDotImage = pageDotImage;
     
-    if (self.pageControlStyle != SDCycleScrollViewPageContolStyleAnimated) {
-        self.pageControlStyle = SDCycleScrollViewPageContolStyleAnimated;
+    if (self.pageControlStyle != YWSDCycleScrollViewPageContolStyleAnimated) {
+        self.pageControlStyle = YWSDCycleScrollViewPageContolStyleAnimated;
     }
     
     [self setCustomPageControlDotImage:pageDotImage isCurrentPageDot:NO];
@@ -365,7 +367,7 @@ NSString * const ID = @"cycleCell";
     int indexOnPageControl = [self pageControlIndexWithCurrentCellIndex:[self currentIndex]];
     
     switch (self.pageControlStyle) {
-        case SDCycleScrollViewPageContolStyleAnimated:
+        case YWSDCycleScrollViewPageContolStyleAnimated:
         {
             YWTAPageControl *pageControl = [[YWTAPageControl alloc] init];
             pageControl.numberOfPages = self.imagePathsGroup.count;
@@ -472,7 +474,7 @@ NSString * const ID = @"cycleCell";
     if (!self.zoomType) {
         _flowLayout.itemSize = self.frame.size;
     } else {
-        _flowLayout.itemSize = CGSizeMake(MaxWidth, MaxHeight);
+        _flowLayout.itemSize = CGSizeMake(YWMaxWidth, _maxHeight);
     }
     
     _mainView.frame = self.bounds;
@@ -609,9 +611,9 @@ NSString * const ID = @"cycleCell";
     
     if (self.zoomType) {
         if ([self currentIndex] == indexPath.item) {
-            cell.imageView.frame = CGRectMake(0, 0, MaxWidth, MaxHeight);
+            cell.imageView.frame = CGRectMake(0, 0, YWMaxWidth, _maxHeight);
         } else {
-            cell.imageView.frame = CGRectMake(0, 0, MinWidth, MinHeight);
+            cell.imageView.frame = CGRectMake(0, 0, YWMinWidth, _minHeight);
         }
         
         cell.imageView.center = cell.contentView.center;
@@ -654,27 +656,27 @@ NSString * const ID = @"cycleCell";
         YWSDCollectionViewCell *nextCell = (YWSDCollectionViewCell *)[self.mainView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:itemIndex + 1 inSection:0]];
         
         // 当前cell的偏移比例
-        CGFloat scale = (fabs(self.flowLayout.itemSize.width * itemIndex - (self.mainView.contentOffset.x + (Screen_Width - self.flowLayout.itemSize.width)/2)))/self.flowLayout.itemSize.width;
+        CGFloat scale = (fabs(self.flowLayout.itemSize.width * itemIndex - (self.mainView.contentOffset.x + (YWScreen_Width - self.flowLayout.itemSize.width)/2)))/self.flowLayout.itemSize.width;
         
-        currentCell.imageView.frame = CGRectMake(0, 0, MaxWidth - scale * (MaxWidth - MinWidth), MaxHeight - scale * (MaxHeight - MinHeight));
+        currentCell.imageView.frame = CGRectMake(0, 0, YWMaxWidth - scale * (YWMaxWidth - YWMinWidth), _maxHeight - scale * (_maxHeight - _minHeight));
 
         if (self.mainView.contentOffset.x > self.contentOffsetX) {
             // 向左滚动
-            if (self.flowLayout.itemSize.width * itemIndex < self.mainView.contentOffset.x + (Screen_Width - self.flowLayout.itemSize.width)/2) {
+            if (self.flowLayout.itemSize.width * itemIndex < self.mainView.contentOffset.x + (YWScreen_Width - self.flowLayout.itemSize.width)/2) {
                 // 当前页图片缩小，下一页图片放大
-                nextCell.imageView.frame = CGRectMake(0, 0, MinWidth + scale * (MaxWidth - MinWidth), MinHeight + scale * (MaxHeight - MinHeight));
+                nextCell.imageView.frame = CGRectMake(0, 0, YWMinWidth + scale * (YWMaxWidth - YWMinWidth), _minHeight + scale * (_maxHeight - _minHeight));
             } else {
                 // 当前页图片放大，前一页图片缩小
-                lastCell.imageView.frame = CGRectMake(0, 0, MaxWidth - (1 - scale) * (MaxWidth - MinWidth), MaxHeight - (1 - scale) * (MaxHeight - MinHeight));
+                lastCell.imageView.frame = CGRectMake(0, 0, YWMaxWidth - (1 - scale) * (YWMaxWidth - YWMinWidth), _maxHeight - (1 - scale) * (_maxHeight - _minHeight));
             }
         } else {
             // 向右滚动
-            if (self.flowLayout.itemSize.width * itemIndex < self.mainView.contentOffset.x + (Screen_Width - self.flowLayout.itemSize.width)/2) {
+            if (self.flowLayout.itemSize.width * itemIndex < self.mainView.contentOffset.x + (YWScreen_Width - self.flowLayout.itemSize.width)/2) {
                 // 当前页图片放大，下一页图片缩小
-                nextCell.imageView.frame = CGRectMake(0, 0, MinWidth + scale * (MaxWidth - MinWidth), MinHeight + scale * (MaxHeight - MinHeight));
+                nextCell.imageView.frame = CGRectMake(0, 0, YWMinWidth + scale * (YWMaxWidth - YWMinWidth), _minHeight + scale * (_maxHeight - _minHeight));
             } else {
                 // 当前页图片缩小，前一页图片放大
-                lastCell.imageView.frame = CGRectMake(0, 0, MaxWidth - (1 - scale) * (MaxWidth - MinWidth), MaxHeight - (1 - scale) * (MaxHeight - MinHeight));
+                lastCell.imageView.frame = CGRectMake(0, 0, YWMaxWidth - (1 - scale) * (YWMaxWidth - YWMinWidth), _maxHeight - (1 - scale) * (_maxHeight - _minHeight));
             }
         }
         
