@@ -10,7 +10,7 @@
  
  *********************************************************************************
  *
- * 🌟🌟🌟 新建SDCycleScrollView交流QQ群：185534916 🌟🌟🌟
+ * 🌟🌟🌟 新建YWSDCycleScrollView交流QQ群：185534916 🌟🌟🌟
  *
  * 在您使用此自动轮播库的过程中如果出现bug请及时以以下任意一种方式联系我们，我们会及时修复bug并
  * 帮您解决问题。
@@ -37,15 +37,15 @@
 #import "YWSDCollectionViewCell.h"
 
 typedef enum {
-    SDCycleScrollViewPageContolAlimentRight,
-    SDCycleScrollViewPageContolAlimentCenter
-} SDCycleScrollViewPageContolAliment;
+    YWSDCycleScrollViewPageContolAlimentRight,
+    YWSDCycleScrollViewPageContolAlimentCenter
+} YWSDCycleScrollViewPageContolAliment;
 
 typedef enum {
-    SDCycleScrollViewPageContolStyleClassic,        // 系统自带经典样式
+    YWSDCycleScrollViewPageContolStyleClassic,        // 系统自带经典样式
     YWSDCycleScrollViewPageContolStyleAnimated,       // 动画效果pagecontrol
-    SDCycleScrollViewPageContolStyleNone            // 不显示pagecontrol
-} SDCycleScrollViewPageContolStyle;
+    YWSDCycleScrollViewPageContolStyleNone            // 不显示pagecontrol
+} YWSDCycleScrollViewPageContolStyle;
 
 @class YWSDCycleScrollView;
 
@@ -58,6 +58,22 @@ typedef enum {
 
 /** 图片滚动回调 */
 - (void)cycleScrollView:(YWSDCycleScrollView *)cycleScrollView didScrollToIndex:(NSInteger)index;
+
+
+
+// 不需要自定义轮播cell的请忽略以下两个的代理方法
+
+// ========== 轮播自定义cell ==========
+
+/** 如果你需要自定义cell样式，请在实现此代理方法返回你的自定义cell的class。 */
+- (Class)customCollectionViewCellClassForCycleScrollView:(YWSDCycleScrollView *)view;
+
+/** 如果你需要自定义cell样式，请在实现此代理方法返回你的自定义cell的Nib。 */
+- (UINib *)customCollectionViewCellNibForCycleScrollView:(YWSDCycleScrollView *)view;
+
+/** 如果你自定义了cell样式，请在实现此代理方法为你的cell填充数据以及其它一系列设置 */
+- (void)setupCustomCell:(UICollectionViewCell *)cell forIndex:(NSInteger)index cycleScrollView:(YWSDCycleScrollView *)view;
+
 
 @end
 
@@ -136,10 +152,10 @@ typedef enum {
 @property (nonatomic, assign) BOOL onlyDisplayText;
 
 /** pagecontrol 样式，默认为动画样式 */
-@property (nonatomic, assign) SDCycleScrollViewPageContolStyle pageControlStyle;
+@property (nonatomic, assign) YWSDCycleScrollViewPageContolStyle pageControlStyle;
 
 /** 分页控件位置 */
-@property (nonatomic, assign) SDCycleScrollViewPageContolAliment pageControlAliment;
+@property (nonatomic, assign) YWSDCycleScrollViewPageContolAliment pageControlAliment;
 
 /** 分页控件距离轮播图的底部间距（在默认间距基础上）的偏移量 */
 @property (nonatomic, assign) CGFloat pageControlBottomOffset;

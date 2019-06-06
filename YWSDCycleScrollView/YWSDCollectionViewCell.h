@@ -1,6 +1,6 @@
 //
 //  YWSDCollectionViewCell.h
-//  SDCycleScrollView
+//  YWSDCycleScrollView
 //
 //  Created by aier on 15-3-22.
 //  Copyright (c) 2015年 GSD. All rights reserved.
@@ -10,7 +10,7 @@
  
  *********************************************************************************
  *
- * 🌟🌟🌟 新建SDCycleScrollView交流QQ群：185534916 🌟🌟🌟
+ * 🌟🌟🌟 新建YWSDCycleScrollView交流QQ群：185534916 🌟🌟🌟
  *
  * 在您使用此自动轮播库的过程中如果出现bug请及时以以下任意一种方式联系我们，我们会及时修复bug并
  * 帮您解决问题。

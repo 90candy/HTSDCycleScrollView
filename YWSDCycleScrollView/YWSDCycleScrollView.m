@@ -10,7 +10,7 @@
  
  *********************************************************************************
  *
- * 🌟🌟🌟 新建SDCycleScrollView交流QQ群：185534916 🌟🌟🌟
+ * 🌟🌟🌟 新建YWSDCycleScrollView交流QQ群：185534916 🌟🌟🌟
  *
  * 在您使用此自动轮播库的过程中如果出现bug请及时以以下任意一种方式联系我们，我们会及时修复bug并
  * 帮您解决问题。
@@ -76,7 +76,7 @@ NSString * const ID = @"cycleCell";
 
 - (void)initialization
 {
-    _pageControlAliment = SDCycleScrollViewPageContolAlimentCenter;
+    _pageControlAliment = YWSDCycleScrollViewPageContolAlimentCenter;
     _autoScrollTimeInterval = 5.0;
     _titleLabelTextColor = [UIColor blackColor];
     _titleLabelTextFont= [UIFont systemFontOfSize:14];
@@ -88,7 +88,7 @@ NSString * const ID = @"cycleCell";
     _pageControlDotSize = kCycleScrollViewInitialPageControlDotSize;
     _pageControlBottomOffset = 0;
     _pageControlRightOffset = 0;
-    _pageControlStyle = SDCycleScrollViewPageContolStyleClassic;
+    _pageControlStyle = YWSDCycleScrollViewPageContolStyleClassic;
     _hidesForSinglePage = YES;
     _currentPageDotColor = [UIColor whiteColor];
     _pageDotColor = [UIColor lightGrayColor];
@@ -152,6 +152,18 @@ NSString * const ID = @"cycleCell";
 
 
 #pragma mark - properties
+
+- (void)setDelegate:(id<YWSDCycleScrollViewDelegate>)delegate
+{
+    _delegate = delegate;
+    
+    if ([self.delegate respondsToSelector:@selector(customCollectionViewCellClassForCycleScrollView:)] && [self.delegate customCollectionViewCellClassForCycleScrollView:self]) {
+        [self.mainView registerClass:[self.delegate customCollectionViewCellClassForCycleScrollView:self] forCellWithReuseIdentifier:ID];
+    }else if ([self.delegate respondsToSelector:@selector(customCollectionViewCellNibForCycleScrollView:)] && [self.delegate customCollectionViewCellNibForCycleScrollView:self]) {
+        [self.mainView registerNib:[self.delegate customCollectionViewCellNibForCycleScrollView:self] forCellWithReuseIdentifier:ID];
+    }
+}
+
 
 - (void)setPlaceholderImage:(UIImage *)placeholderImage
 {
@@ -276,7 +288,7 @@ NSString * const ID = @"cycleCell";
     [self setAutoScroll:self.autoScroll];
 }
 
-- (void)setPageControlStyle:(SDCycleScrollViewPageContolStyle)pageControlStyle
+- (void)setPageControlStyle:(YWSDCycleScrollViewPageContolStyle)pageControlStyle
 {
     _pageControlStyle = pageControlStyle;
     
@@ -380,7 +392,7 @@ NSString * const ID = @"cycleCell";
         }
             break;
             
-        case SDCycleScrollViewPageContolStyleClassic:
+        case YWSDCycleScrollViewPageContolStyleClassic:
         {
             UIPageControl *pageControl = [[UIPageControl alloc] init];
             pageControl.numberOfPages = self.imagePathsGroup.count;
@@ -510,7 +522,7 @@ NSString * const ID = @"cycleCell";
         size = CGSizeMake(self.imagePathsGroup.count * self.pageControlDotSize.width * 1.5, self.pageControlDotSize.height);
     }
     CGFloat x = (self.sd_width - size.width) * 0.5;
-    if (self.pageControlAliment == SDCycleScrollViewPageContolAlimentRight) {
+    if (self.pageControlAliment == YWSDCycleScrollViewPageContolAlimentRight) {
         x = self.mainView.sd_width - size.width - 10;
     }
     CGFloat y = self.mainView.sd_height - size.height - 10;
@@ -576,6 +588,16 @@ NSString * const ID = @"cycleCell";
     YWSDCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:ID forIndexPath:indexPath];
     
     long itemIndex = [self pageControlIndexWithCurrentCellIndex:indexPath.item];
+    
+    if ([self.delegate respondsToSelector:@selector(setupCustomCell:forIndex:cycleScrollView:)] &&
+        [self.delegate respondsToSelector:@selector(customCollectionViewCellClassForCycleScrollView:)] && [self.delegate customCollectionViewCellClassForCycleScrollView:self]) {
+        [self.delegate setupCustomCell:cell forIndex:itemIndex cycleScrollView:self];
+        return cell;
+    }else if ([self.delegate respondsToSelector:@selector(setupCustomCell:forIndex:cycleScrollView:)] &&
+              [self.delegate respondsToSelector:@selector(customCollectionViewCellNibForCycleScrollView:)] && [self.delegate customCollectionViewCellNibForCycleScrollView:self]) {
+        [self.delegate setupCustomCell:cell forIndex:itemIndex cycleScrollView:self];
+        return cell;
+    }
     
     NSString *imagePath = self.imagePathsGroup[itemIndex];
     
